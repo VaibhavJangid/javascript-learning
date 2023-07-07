@@ -1,7 +1,7 @@
 // Types of Datatypes
 
 // Primitive Type
-// 7 Types: String, Number, Null, Boolean, Symbol(used large projects and used for giving uniqueness), BigInt (Scintific Values or very large values)
+// 7 Types: String, Number, Null, Boolean, Symbol(used in large projects and used for giving uniqueness), BigInt (Scintific Values or very large values)
 
 // Number
 const score = 100
@@ -43,4 +43,30 @@ const myfunction = function(){
     console.log("Hello World");
 }
 
-console.log(typeof myfunction);
+// console.log(typeof myfunction);
+
+
+// **************** MEMORY *******************
+
+// Memory are of two types
+// Stack (Primitive) It is a copy of orignal we don't get reference from original value we get it from copy, Heap (Non-Primitive) When we made any chnages in the memory it show changes on orignal memory because we get reference from orignal value.
+
+let myName = "Vaibhav"
+let anothername = myName
+anothername = "Anuj"
+
+console.log(myName);
+console.log(anothername);
+
+let userOne = {
+    email: "user@google.com",
+    upi: "user@upi"
+}
+
+let userTwo = userOne 
+
+userTwo.email = "vaibhav@ok.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
+
