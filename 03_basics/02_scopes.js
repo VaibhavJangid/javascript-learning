@@ -18,7 +18,7 @@ if (true) {
     let a = 10
     const b = 20
     var c = 30
-} // the above code is call local scope
+} // the above code is call block scope
 
 
 // console.log(a);
