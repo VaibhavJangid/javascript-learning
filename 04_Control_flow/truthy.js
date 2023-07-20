@@ -44,3 +44,25 @@ if (Object.keys(emptyObj).length === 0) {
 
 // 0 == '' (empty string)
 // > true
+
+
+
+// Nullish Coalescing Operator (??): null undefined
+
+// It is a fallback operator, which is used to make sure our code run if we got any issue in first program then it jump on another next one so that our code run perfectly.
+
+let val1;
+// val1 = 5 ?? 10
+// val1 = null ?? 10
+// val1 = undefined ?? 15
+val1 = null ?? 10 ?? 15
+
+// console.log(val1);
+
+
+// Terniary Operator: (?)
+
+// condition ? true : false
+
+const iceTeaPrice = 100
+iceTeaPrice <= 80 ? console.log("less then 80") : console.log("more then 80");

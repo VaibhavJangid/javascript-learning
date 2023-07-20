@@ -15,7 +15,7 @@ if (false){
 // How can comparison can be happen.
 
 // operators
-// <, >, <=, >=, ==, !=, ===, !==
+// <, >, <=, >=, ==, !=, ===(it also check value type), !==
 
 const temperature = 40
 
