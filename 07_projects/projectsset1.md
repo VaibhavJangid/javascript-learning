@@ -6,7 +6,7 @@
 # Solution Code
 
 ## Project 1
-```
+``` javascript
 const buttons = document.querySelectorAll('.button');
 // we are selecting 'button' because from here we will get oor values.
 
@@ -97,5 +97,20 @@ form.addEventListener('submit', function (e) {
   // }
 });
 
+
+```
+
+## Project 3 Solution
+
+``` javascript
+
+const clock = document.querySelector('#clock');
+// const clock = document.getElementById('clock')
+
+setInterval((dateFunction) => {
+  let time = new Date();
+  // console.log(time.toLocaleTimeString())
+  clock.innerHTML = time.toLocaleTimeString();
+}, 1000);
 
 ```
