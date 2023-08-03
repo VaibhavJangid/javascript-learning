@@ -49,13 +49,13 @@
 
     // 1. Bubbling: (1. Inner element => (2. Outer Element)) 
       
-    document.getElementById('images').addEventListener('click', function(e){
-        console.log("clicked inside the ul.");
-    }, false)
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul.");
+    // }, false)
     
-    document.getElementById('owl').addEventListener('click', function(e){
-       console.log("Owl clicked");
-    }, false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //    console.log("Owl clicked");
+    // }, false)
     
     
     // 2. Capturing: (1.Outer Element => (2.Inner element))
@@ -73,23 +73,37 @@
 
     // then we apply ".stopPropagation()" same like ".preventDefalut".
 
-    document.getElementById('owl').addEventListener('click', function(e){
-        console.log("Owl clicked");
-        e.stopPropagation()
-    }, true)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("Owl clicked");
+    //     e.stopPropagation()
+    // }, true)
 
     // Now your "Inner Event" will not propagate to "Outer Event".
 
     // ---------------------------------
 
+    // e.stopPropagation()
+
     document.getElementById('google').addEventListener("click", function(e){
         e.stopPropagation()
         e.preventDefault();
-        console.log("google clicked");
+        // console.log("google clicked");
     }, false)
 
+    // -------------------------------------
 
+    // project
     
+    document.querySelector('#images').addEventListener('click', function (e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === "ING"){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            // removeIt.parentNode.removeChild(removeIt)
+        }
+
+    }, false)
 
     
 </script>
