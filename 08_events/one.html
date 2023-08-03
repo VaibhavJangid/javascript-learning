@@ -26,9 +26,70 @@
     // attachEvent(): used in early days in internet explorer
     // jQuery - "on" event
 
-    document.getElementById('owl').addEventListener('click', function(){
-        alert('owl clicked again')
-    })
+    // types of events, timestamps, defaultPrevented, target,  toElement, scrElement, currentTarget
+    // clinentX, clientY, screenX, screenY (position related)
+    // altKey, ctrlKey, shiftKey, keyCode
+
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert('owl clicked again')
+    // })
+    
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log(e);
+    // }, false)
+    
+    
+    // event propagation : it is of two types 
+    
+    // 1. Bubbling: (1. Inner element => (2. Outer Element))        
+    // 2. Capturing: (1.Outer Element => (2.Inner element)) 
+    
+    // NOTE : Bubbling comes in defalut, means if we don't want to take "inner element" comes first then we apply "true" in last of it then it will convert it into "capturing". Now "outer event" will come first.
+    
+
+    // 1. Bubbling: (1. Inner element => (2. Outer Element)) 
+      
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul.");
+    }, false)
+    
+    document.getElementById('owl').addEventListener('click', function(e){
+       console.log("Owl clicked");
+    }, false)
+    
+    
+    // 2. Capturing: (1.Outer Element => (2.Inner element))
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul.");
+    // }, true)
+    
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("Owl clicked");
+    // }, true)
+
+
+    // If you want "Inner element" should be seprated from "outer element" or you don't want any Event Bubbling.
+
+    // then we apply ".stopPropagation()" same like ".preventDefalut".
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("Owl clicked");
+        e.stopPropagation()
+    }, true)
+
+    // Now your "Inner Event" will not propagate to "Outer Event".
+
+    // ---------------------------------
+
+    document.getElementById('google').addEventListener("click", function(e){
+        e.stopPropagation()
+        e.preventDefault();
+        console.log("google clicked");
+    }, false)
+
+
+    
 
     
 </script>
