@@ -1,8 +1,8 @@
-
-    JavaScript Execution Context
- 
-        
-     ______
+//
+//    JavaScript Execution Context
+// 
+//        
+//     ______
 //    |      |
 //    |  {}  | => This is our "JS CODE"
 //    |______|
