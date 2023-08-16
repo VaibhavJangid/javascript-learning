@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body style="background-color: #414141; color: #fff">
+    <h1>Ok Vaibhav</h1>
+    <button id="start">Start</button>
+	<button id="stop">Stop</button>
+  </body>
+  <script>
+    
+	let sayHi;
+
+        function startHi() {
+            sayHi = setInterval(function () {
+                console.log("Hi", Date.now());
+            }, 1000);
+
+            document.getElementById("start").disabled = true;
+            document.getElementById("stop").disabled = false; // Enable the Stop button
+        }
+
+        function stopHi() {
+            clearInterval(sayHi); // Clear the interval
+            document.getElementById("start").disabled = false;
+            document.getElementById("stop").disabled = true; // Disable the Stop button
+        }
+
+    document.getElementById("start").addEventListener("click", startHi);
+    document.getElementById("stop").addEventListener("click", stopHi); // Add event listener for Stop button
+
+  </script>
+</html>
