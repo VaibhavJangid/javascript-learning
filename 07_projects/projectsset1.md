@@ -220,6 +220,7 @@ function newGame() {
   });
 }
 
+```
 
 
 ## Project 6 Solution
