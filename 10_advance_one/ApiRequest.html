@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+      text-align: center;
+    }
+  
+    .photo {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .following {
+      margin-top: 10px;
+    }
+  </style>
+<body style="background-color: #212121; color: aliceblue;">
+    
+  <div class="container">
+    <button id="showInfoButton">Show Photo and Following Count</button>
+    <img src="" alt="Your Photo" class="photo">
+    <div class="following">
+      <p></p>
+    </div>
+  </div>
+
+</body>
+<script>
+    /* 
+    XMLHttpRequest() = it is an method (object/class), with the help of this we send and recive data request.
+
+    new = here we are using "new" to make it 'object' because before applying "new" it was a 'class'.
+
+    xhr = variable name we can name it 'anything'.
+    */
+    const requestUrl = 'https://api.github.com/users/vaibhavjangid'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState); 
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data.following);
+        }  
+    }
+    xhr.send()
+</script>
+</html>
