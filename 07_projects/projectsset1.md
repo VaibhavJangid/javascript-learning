@@ -220,7 +220,7 @@ function newGame() {
   });
 }
 
-```
+
 
 ## Project 6 Solution
 
@@ -245,11 +245,16 @@ const startChangingColor = function(){
   function changeBgColor() {
     document.body.style.backgroundColor = randomColor();
   }
+  document.getElementById("start").disabled = true;
+  document.getElementById("stop").disabled = false; // Enable the Stop button
 };
 
 const stopChangingColor = function(){
   clearInterval(intervalId)
   intervalId = null // // to make code cleaner and efficent
+
+  document.getElementById('start').disabled = false;
+  document.getElementById('stop').disabled = true; // Enable the Start button
 }
 
 document.querySelector('#start').addEventListener('click', startChangingColor)
