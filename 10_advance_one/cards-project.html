@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .container {
+    display: none;
+    text-align: center;
+  }
+
+  .photo {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .following {
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body style="background-color: #414141; color: #fff">
+
+<button id="showInfoButton">Show GitHub Details</button>
+
+<div id="infoContainer" class="container">
+  <img src="" alt="User's Avatar" class="photo" id="avatar">
+  <div class="following">
+    <p>Followers: <span id="followers"></span></p>
+  </div>
+</div>
+
+<script>
+  const showInfoButton = document.getElementById("showInfoButton");
+  const infoContainer = document.getElementById("infoContainer");
+  const avatarElement = document.getElementById("avatar");
+  const followersElement = document.getElementById("followers");
+
+  showInfoButton.addEventListener("click", async function() {
+    const requestUrl = 'https://api.github.com/users/vaibhavjangid'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState); 
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data.following);
+			avatarElement.src = data.avatar_url;
+      		followersElement.textContent = data.followers;
+			infoContainer.style.display = "block";
+        }  
+    }
+    xhr.send()
+  });
+</script>
+
+</body>
+</html>
