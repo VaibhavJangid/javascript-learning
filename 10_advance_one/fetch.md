@@ -30,4 +30,5 @@ response = fetch('something')
               |__________________|
 
 ```
-For more context [![Watch this video](https://youtu.be/Rive84an6Lc?si=qP3WM84m7tZTsWrg&t=623)]
+For more context
+[![Watch this video](https://img.youtube.com/vi/Rive84an6Lc?si=8ycF1lP1B4KTq0kP/0.jpg)](https://youtu.be/Rive84an6Lc?si=qP3WM84m7tZTsWrg&t=623)
