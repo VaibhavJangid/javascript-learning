@@ -12,7 +12,7 @@ class User {
 class Teacher extends User{
     constructor(username, email, password){
         super(username)
-        // Super: prototype.username.call
+        // Super: prototype.this.username.call
         this.email = email
         this.password = password
     }
